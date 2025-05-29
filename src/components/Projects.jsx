@@ -1,0 +1,217 @@
+import { motion } from 'framer-motion';
+
+const Projects = () => {
+  // Project data with your specific information
+  const projects = [
+    {
+      id: 1,
+      title: 'Narada Bot',
+      description: 'A personal portfolio website built with React and Tailwind CSS to showcase my skills and projects.',
+      technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+      image: 'src/assets/images/project1.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 2,
+      title: 'Portfolio Website',     
+      description: 'A full-stack e-commerce platform with user authentication, product catalog, and payment integration.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      image: 'src/assets/images/project6.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 3,
+      title: 'HACKAUT Website',
+      description: 'A productivity application for managing tasks with drag-and-drop functionality and team collaboration.',
+      technologies: ['React', 'Firebase', 'Material UI'],
+      image: 'src/assets/images/project10.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 4,
+      title: 'Flappy Bird Game',
+      description: 'A weather application that displays current and forecasted weather data for any location worldwide.',
+      technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      image: 'src/assets/images/project3.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 5,
+      title: 'Hand Traker',
+      description: 'A weather application that displays current and forecasted weather data for any location worldwide.',
+      technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      image: 'src/assets/images/project4.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 6,
+      title: 'AudioWarp',
+      description: 'A personal portfolio website built with React and Tailwind CSS to showcase my skills and projects.',
+      technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+      image: 'src/assets/images/project2.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 7,
+      title: 'Weather Dashboard',
+      description: 'A weather application that displays current and forecasted weather data for any location worldwide.',
+      technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      image: 'src/assets/images/project7.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 8,
+      title: 'Clock',
+      description: 'A weather application that displays current and forecasted weather data for any location worldwide.',
+      technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      image: 'src/assets/images/project8.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 9,
+      title: 'Calculator',
+      description: 'A weather application that displays current and forecasted weather data for any location worldwide.',
+      technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      image: 'src/assets/images/project5.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 10,
+      title: 'Proposal Accepter',
+      description: 'A weather application that displays current and forecasted weather data for any location worldwide.',
+      technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      image: 'src/assets/images/project9.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 11,
+      title: 'Vertual Whiteboard',
+      description: 'A weather application that displays current and forecasted weather data for any location worldwide.',
+      technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      image: 'src/assets/images/project11.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    },
+    {
+      id: 12,
+      title: 'Comtability Checker',
+      description: 'A weather application that displays current and forecasted weather data for any location worldwide.',
+      technologies: ['JavaScript', 'OpenWeather API', 'Chart.js'],
+      image: 'src/assets/images/project12.png',
+      link: 'https://debashis-lemon.vercel.app/',
+      github: 'https://github.com/Debashis7307'
+    }
+  ];
+
+  return (
+    <section id="projects" className="py-20 bg-dark">
+      <div className="container mx-auto px-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
+            My <span className="text-primary">Projects</span>
+          </h2>
+          <p className="text-xl mt-4 text-gray-300">Here are some of my recent works</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: .9 }}
+              whileInView={{ opacity: 1, y: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative rounded-2xl overflow-hidden border-3 border-gray-700"
+              style={{
+                background: 'linear-gradient(35deg, rgba(44, 84, 175, 0.7) 0%, rgba(1, 1, 13, 0.7) 50%)',
+                padding: '0',
+                textAlign: 'center',
+                transform: 'perspective(1000px) rotateX(3deg) scale(1)',
+                transition: 'transform 0.5s, box-shadow 0.5s',
+                boxShadow: '-8px -8px 15px rgba(255,255,255,0.1), 10px 10px 15px rgba(0,0,0,0.8)',
+                zIndex: 1
+              }}
+              whileHover={{
+                transform: 'perspective(1000px) rotateY(-15deg) scale(1.04)',
+                boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5)'
+              }}
+            >
+              <div 
+                className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-blue-400 to-blue-800 opacity-20 blur-lg -z-10 -m-1"
+                style={{
+                  transition: 'all 0.5s'
+                }}
+              />
+              
+              <div className="h-48 overflow-hidden group">
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-2xl font-bold mb-2 text-white">{project.title}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4 ">
+                  {project.technologies.map((tech, i) => (
+                    <span key={i} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm shadow-[-8px_-8px_15px_rgba(255,255,255,0.1),10px_10px_15px_rgba(0,0,0,0.7)]">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4 justify-center">
+                  <a 
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-full font-medium transition-colors"
+                    style={{
+                      background: '#1C1C37',
+                      color: 'white',
+                      boxShadow: '-8px -8px 15px rgba(255,255,255,0.1), 10px 10px 15px rgba(0,0,0,0.8)'
+                    }}
+                  >
+                    Live Demo
+                  </a>
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded font-medium transition-colors"
+                    style={{
+                      background: '#1C1C37',
+                      color: 'white',
+                      boxShadow: '-8px -8px 15px rgba(255,255,255,0.1), 10px 10px 15px rgba(0,0,0,0.8)'
+                    }}
+                  >
+                    View Code
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
+

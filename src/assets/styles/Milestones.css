@@ -1,0 +1,250 @@
+.milestones-section {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #e0e7ff;
+  box-sizing: border-box;
+}
+
+.milestones-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 900px;
+  width: 90%;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.milestones-heading {
+  font-size: 3rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.milestones-subheading {
+  font-size: 1.3rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  user-select: none;
+}
+
+/* 3D Container Setup */
+.milestones-container {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  height: 500px;
+  perspective: 1600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main card with 3D perspective */
+.milestone-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background: #0f172a;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.6s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Hover effect on card */
+.milestone-card.hovered,
+.milestone-card:focus-within {
+  transform: rotateY(12deg) rotateX(6deg) scale(1.04);
+  box-shadow:
+    0 45px 90px rgba(0, 0, 0, 0.85),
+    0 0 80px rgba(255, 255, 255, 0.12),
+    0 20px 40px rgba(0, 0, 0, 0.45);
+  z-index: 10;
+}
+
+/* Image inside main card */
+.milestone-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 1s ease, filter 0.5s ease;
+  backface-visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Card shadows behind main card */
+.milestone-card::before,
+.milestone-card::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  background: #32486d;
+  top: 15px;
+  left: 25px;
+  z-index: -1;
+  transform-origin: center;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Show shadow only on hover/focus */
+.milestone-card.hovered::before,
+.milestone-card:focus-within::before,
+.milestone-card.hovered::after,
+.milestone-card:focus-within::after {
+  opacity: 0.7;
+}
+
+.milestone-card::after {
+  transform: translateZ(-30px) scale(0.96) rotateY(2deg);
+  opacity: 0.15;
+}
+
+
+
+.milestone-card.hovered::after,
+.milestone-card:focus-within::after {
+  transform: translateZ(-40px) scale(0.94) rotateY(4deg);
+}
+
+/* Description */
+.milestone-description {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translateX(-50%);
+  padding: 1rem 1.25rem;
+  width: 90%;
+  max-width: 540px;
+  font-size: 1rem;
+  font-weight: 200;
+  color: #f9fafb;
+  text-align: center;
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+  background: rgba(15, 23, 42, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  pointer-events: auto;
+  user-select: none;
+  transition: background-color 0.4s ease;
+}
+
+/* Navigation buttons */
+.milestone-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  z-index: 15;
+  /* Bold dark shadow */
+  box-shadow: -8px -8px 15px rgba(255,255,255,0.1),10px 10px 15px black;
+}
+
+.milestone-nav:active,
+.milestone-nav.active {
+  color: #0ef;
+}
+
+.milestone-nav.left {
+  left: 12px;
+}
+.milestone-nav.right {
+  right: 12px;
+}
+
+
+.milestone-play-pause:active,
+.milestone-play-pause.active {
+  color: #0ef;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .milestones-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .milestones-heading {
+    font-size: 2.4rem;
+  }
+
+  .milestones-subheading {
+    font-size: 1.15rem;
+  }
+
+  .milestones-container {
+    max-width: 90vw;
+    height: 320px;
+  }
+
+  .milestone-nav {
+    width: 30px;
+    height: 30px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .milestones-heading {
+    font-size: 2rem;
+  }
+
+  .milestones-subheading {
+    font-size: 1rem;
+  }
+
+  .milestones-container {
+    height: 260px;
+  }
+
+  .milestone-nav {
+    width: 26px;
+    height: 26px;
+    font-size: 1rem;
+  }
+  .milestone-card::before,
+.milestone-card::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  background: #32486d;
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+  transform-origin: center;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+}
+
+
