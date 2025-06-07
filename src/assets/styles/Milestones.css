@@ -127,9 +127,9 @@
   left: 50%;
   bottom: 2%;
   transform: translateX(-50%);
-  padding: 1rem 1.25rem;
+  padding: .5rem .5rem;
   width: 90%;
-  max-width: 540px;
+  max-width: 640px;
   font-size: 1rem;
   font-weight: 200;
   color: #f9fafb;
@@ -244,7 +244,9 @@
   opacity: 0;
   pointer-events: none;
 }
-
+.milestone-description{
+  font-size: 0.5rem;
+}
 }
 
 

@@ -38,14 +38,14 @@ const Home = () => {
       },
       links: {
         enable: true,
-        distance: 150,
+        distance: 100,
         color: "#0ef",
         opacity: 0.4,
         width: 1
       },
       move: {
         enable: true,
-        speed: 1.5,
+        speed: 1.8,
         direction: "none",
         random: true,
         straight: false,
@@ -65,7 +65,7 @@ const Home = () => {
       },
       modes: {
         repulse: {
-          distance: 100
+          distance: 90
         },
         push: {
           quantity: 4
