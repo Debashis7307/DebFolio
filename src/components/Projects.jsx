@@ -6,17 +6,17 @@ const Projects = () => {
     {
       id: 1,
       title: 'Narada Bot',
-      description: 'A personal portfolio website built with React and Tailwind CSS to showcase my skills and projects.',
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+      description: 'Discord bot integrated with Google Calendar, featuring Moto Synk for auto-syncing, Skudule for smart scheduling, and Simplefy for streamlined.',
+      technologies: ['Next JS', 'Tailwind CSS', 'Composeio'],
       image: 'src/assets/images/project1.png',
-      link: 'https://debashis-lemon.vercel.app/',
-      github: 'https://github.com/Debashis7307'
+      link: 'https://naradabot.vercel.app/',
+      github: 'https://github.com/arnabpal2022/narada-bot'
     },
     {
       id: 2,
       title: 'Portfolio Website',     
       description: 'A full-stack e-commerce platform with user authentication, product catalog, and payment integration.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      technologies: ['React', 'Partical JS', 'Email JS'],
       image: 'src/assets/images/project6.png',
       link: 'https://debashis-lemon.vercel.app/',
       github: 'https://github.com/Debashis7307'
@@ -25,7 +25,7 @@ const Projects = () => {
       id: 3,
       title: 'HACKAUT Website',
       description: 'A productivity application for managing tasks with drag-and-drop functionality and team collaboration.',
-      technologies: ['React', 'Firebase', 'Material UI'],
+      technologies: ['React', 'Email JS','Framer Motion'],
       image: 'src/assets/images/project10.png',
       link: 'https://debashis-lemon.vercel.app/',
       github: 'https://github.com/Debashis7307'

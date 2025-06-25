@@ -3,7 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { useCallback } from 'react';
 import Particles from 'react-tsparticles';
 import { loadSlim } from 'tsparticles-slim';
-
+import picture from '../assets/images/pic1.png';
 const Home = () => {
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
@@ -227,7 +227,7 @@ const Home = () => {
 
             {/* Image Coming Out of Circle */}
             <motion.img 
-              src="src/assets/images/pic1.png"
+              src={picture}
               alt="Debashis Bera" 
               className="relative z-20 w-80 h-80 md:w-[24rem] md:h-[23.6rem] object-cover rounded-lg shadow-2xl cursor-pointer"
               initial={{ scale: 0.9, y: 20 }}
