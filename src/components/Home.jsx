@@ -170,7 +170,7 @@ const Home = () => {
             transition={{ delay: 1 }}
           >
             <motion.a 
-              href="src\assets\images\CV.pdf" 
+              href="src\assets\images\Deb_Tech_Resume.pdf" 
               download="Debashis_Bera_CV.pdf"
               className="px-6 py-3 shadow-[-8px_-8px_15px_rgba(255,255,255,0.1),10px_10px_15px_rgba(0,0,0,0.8)] bg-primary text-dark font-bold rounded-full hover:shadow-lg hover:shadow-primary/50 transition-all border-2 border-white/20 relative overflow-hidden "
               whileHover={{
