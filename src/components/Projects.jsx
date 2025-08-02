@@ -187,11 +187,26 @@ const Projects = () => {
                 }}
               />
 
-              <div className="h-48 overflow-hidden group">
+              <div
+                className="h-48 overflow-hidden group"
+                style={{ padding: 0, margin: 0, width: "100%" }}
+              >
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-fill transition-transform duration-500 group-hover:scale-110"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "fill",
+                    display: "block",
+                    margin: 0,
+                    padding: 0,
+                    minWidth: "100%",
+                    minHeight: "100%",
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                  }}
                 />
               </div>
               <div className="p-6">

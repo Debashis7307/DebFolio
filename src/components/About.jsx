@@ -25,13 +25,25 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:w-1/3 sm:h-1/3 relative"
+            className="lg:w-1/3 sm:h-1/3 relative lg:-mt-15"
           >
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 relative shadow-[-8px_-8px_15px_rgba(255,255,255,0.1),10px_10px_15px_rgba(0,0,0,0.8)]">
               <img
                 src={pic5}
                 alt="Debashis Bera"
-                className="w-50% h-50% object-cover rounded-full shadow-2xl cursor-pointer "
+                className="w-full h-full object-cover rounded-full shadow-2xl cursor-pointer max-[425px]:w-[110%] max-[425px]:h-[110%]"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                  margin: 0,
+                  padding: 0,
+                  minWidth: "100%",
+                  minHeight: "100%",
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                }}
               />
               <div className="absolute inset-0 rounded-full border-8 border-primary/10 animate-spin-slow -z-10 "></div>
             </div>
