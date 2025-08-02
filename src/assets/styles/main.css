@@ -1,12 +1,11 @@
 @import "tailwindcss";
 /* @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Italianno&family=Macondo&family=Macondo+Swash+Caps&family=Poppins:wght@300;400;500;600;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Alex+Brush&family=Ballet:opsz@16..72&family=Lovers+Quarrel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Georgian:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pinyon+Script&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Aladin&family=Alex+Brush&family=Ballet:opsz@16..72&family=Lovers+Quarrel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Georgian:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pinyon+Script&display=swap");
+* {
   font-family: "Noto Serif Georgian", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-
 }
 
 h1 {
@@ -26,7 +25,11 @@ h2 {
   margin: 0 auto;
 }
 body {
-  background: linear-gradient(93deg, rgba(44, 84, 175, 1) 0%, rgba(1, 1, 13, 1) 40%);
+  background: linear-gradient(
+    93deg,
+    rgba(44, 84, 175, 1) 0%,
+    rgba(1, 1, 13, 1) 40%
+  );
   color: #fff;
 }
 
@@ -85,8 +88,7 @@ body {
 
 /* Button depth effect */
 .btn-3d {
-  box-shadow: 0 4px 0 rgba(0, 200, 255, 0.8),
-              0 6px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 0 rgba(0, 200, 255, 0.8), 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-3d:active {
@@ -106,8 +108,13 @@ body {
 
 /* Circular frame animation */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .floating-circle {
@@ -117,7 +124,6 @@ body {
   color: #0ef;
   text-shadow: 0 0 10px rgba(0, 238, 255, 0.5);
 }
-
 
 /* Responsive Breakpoints */
 /* 320px - Small Mobile */
@@ -250,7 +256,6 @@ body {
 
 /* Utility Classes */
 
-
 .bg-primary {
   background-color: var(--primary-color);
 }
@@ -286,7 +291,8 @@ body {
 }
 
 /* Form Elements */
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
@@ -296,7 +302,8 @@ input, textarea {
   transition: all 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-color: var(--primary-color);
   box-shadow: 0 0 0 2px rgba(0, 238, 255, 0.2);
