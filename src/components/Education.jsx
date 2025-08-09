@@ -1,35 +1,44 @@
-import { motion } from 'framer-motion';
-import { FaCalendarAlt } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaCalendarAlt } from "react-icons/fa";
+import ed1 from "../assets/images/ed1.png";
+import ed2 from "../assets/images/ed2.png";
+import ed3 from "../assets/images/ed3.png";
 
 const Education = () => {
   const educationData = [
     {
       id: 1,
-      year: '2017 - 2020',
-      title: 'Secondary Education',
-      description: 'In 2020, I graduated from Panithar GramShava Mahandra Siksha Sadan with an impressive 93% score. This accomplishment is a testament to my hard work, dedication, and strong academic foundation that was laid in secondary education. In school, I gained a foundation in important subjects like Math, Science, History, Geography, Sanskrit and Literature, which have been invaluable to my personal and professional development.',
-      align: 'left'
+      year: "2017 - 2020",
+      title: "Secondary Education",
+      description:
+        "In 2020, I graduated from Panithar GramShava Mahandra Siksha Sadan with an impressive 93% score. This accomplishment is a testament to my hard work, dedication, and strong academic foundation that was laid in secondary education. In school, I gained a foundation in important subjects like Math, Science, History, Geography, Sanskrit and Literature, which have been invaluable to my personal and professional development.",
+      align: "left",
+      image: ed1,
     },
     {
       id: 2,
-      year: '2020 - 2022',
-      title: 'Higher-Secondary Education',
-      description: 'I completed my higher secondary education from Karkai Vivakananda Vidyapith (H.S.) in 2022 with a stellar 91% overall grade. I pursued the proper science stream, studying subjects such as Mathematics, Physics, Chemistry, and Biology. Throughout my studies, I demonstrated a deep passion for science and a strong work ethic. My Higher-Secondary Education sparked a deep fascination with technology, and I knew I wanted to pursue a career in this field. I became particularly interested in Computer Science, Artificial Intelligence and Cybersecurity and began to develop the necessary skills and knowledge to pursue a career in this exciting and rapidly evolving field.',
-      align: 'right'
+      year: "2020 - 2022",
+      title: "Higher-Secondary Education",
+      description:
+        "I completed my higher secondary education from Karkai Vivakananda Vidyapith (H.S.) in 2022 with a stellar 91% overall grade. I pursued the proper science stream, studying subjects such as Mathematics, Physics, Chemistry, and Biology. Throughout my studies, I demonstrated a deep passion for science and a strong work ethic. My Higher-Secondary Education sparked a deep fascination with technology, and I knew I wanted to pursue a career in this field. I became particularly interested in Computer Science, Artificial Intelligence and Cybersecurity and began to develop the necessary skills and knowledge to pursue a career in this exciting and rapidly evolving field.",
+      align: "right",
+      image: ed2,
     },
     {
       id: 3,
-      year: '2022 - 2026',
-      title: 'Bachelor of Technology',
-      description: 'After completing my higher secondary education, I pursued a B.Tech degree in Computer Science & Engineering from Maulana Abul Kalam Azad University of Technology, West Bengal, with a focus on Data Structures, Algorithms, Operating Systems, and Computer Architecture. During my time in this program, I gained a strong foundation in technical concepts, including C, C++, Python, Web-Dev. I also developed essential skills such as problem-solving, coding, teamwork, and project management. My B.Tech degree prepared me for the challenges and opportunities of a career in the tech industry and allowed me to explore my interests and develop my expertise.',
-      align: 'left'
-    }
+      year: "2022 - 2026",
+      title: "Bachelor of Technology",
+      description:
+        "After completing my higher secondary education, I pursued a B.Tech degree in Computer Science & Engineering from Maulana Abul Kalam Azad University of Technology, West Bengal, with a focus on Data Structures, Algorithms, Operating Systems, and Computer Architecture. During my time in this program, I gained a strong foundation in technical concepts, including C, C++, Python, Web-Dev. I also developed essential skills such as problem-solving, coding, teamwork, and project management. My B.Tech degree prepared me for the challenges and opportunities of a career in the tech industry and allowed me to explore my interests and develop my expertise.",
+      align: "left",
+      image: ed3,
+    },
   ];
 
   return (
     <section id="education" className="py-20 bg-darker ">
       <div className="container mx-auto px-4">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -47,14 +56,79 @@ const Education = () => {
           {educationData.map((item, index) => (
             <motion.div
               key={item.id}
-              initial={{ rotateY: item.align === 'left' ? 90 : -90 }}
+              initial={{ rotateY: item.align === "left" ? 90 : -90 }}
               whileInView={{ rotateY: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`mb-12 md:flex ${item.align === 'left' ? 'md:justify-start' : 'md:justify-end'} perspective-[1000px]`}
+              className={`mb-12 md:flex ${
+                item.align === "left" ? "md:justify-start" : "md:justify-end"
+              } perspective-[1000px]`}
             >
-              <div className={`w-full md:w-1/2 shadow-[-8px_-8px_15px_rgba(255,255,255,0.1),10px_10px_15px_rgba(0,0,0,0.8)] p-6 rounded-xl border border-primary/30 bg-dark/50 backdrop-blur-sm ${item.align === 'left' ? 'md:mr-8' : 'md:ml-8'} shadow-[ -8px_-8px_15px_rgba(255,255,255,0.1), 10px_10px_15px_black ]`}
-                   style={{ transformStyle: 'preserve-3d' }}
+              {/* Education Image - positioned in vacant spaces */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: index * 0.2 + 0.1 }}
+                viewport={{ once: true }}
+                className={`mb-6 md:mb-0 ${
+                  item.align === "left"
+                    ? "md:order-2 md:w-1/4 md:pl-4" // Right side for left-aligned cards
+                    : "md:order-1 md:w-1/4 md:pr-4 md:mt-15" // Left side for right-aligned cards with top margin
+                }`}
+              >
+                <div className="relative">
+                  {/* Image Container */}
+                  <motion.div
+                    className="relative"
+                    animate={{
+                      y: [0, -10, 0],
+                      rotateZ: [0, 1, -1, 0],
+                    }}
+                    transition={{
+                      y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                      rotateZ: {
+                        duration: 6,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      },
+                    }}
+                  >
+                    <motion.img
+                      src={item.image}
+                      alt={item.title}
+                      className={`w-full object-contain ${
+                        item.id === 3
+                          ? "h-36 sm:h-40 md:h-64 lg:h-68" // 1.5x for mobile, 3x for larger screens
+                          : "h-28 sm:h-32 md:h-48 lg:h-52" // 1.5x for mobile, 2x for larger screens
+                      }`}
+                      whileHover={{
+                        filter: "drop-shadow(0 0 15px rgba(147, 51, 234, 0.4))",
+                        scale: 1.05,
+                        transition: { duration: 0.3, ease: "easeInOut" },
+                      }}
+                      animate={{
+                        scale: [1, 1.02, 1],
+                      }}
+                      transition={{
+                        scale: {
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        },
+                      }}
+                    />
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Education Card */}
+              <div
+                className={`w-full md:w-1/2 shadow-[-8px_-8px_15px_rgba(255,255,255,0.1),10px_10px_15px_rgba(0,0,0,0.8)] p-6 rounded-xl border border-primary/30 bg-dark/50 backdrop-blur-sm ${
+                  item.align === "left" ? "md:mr-8" : "md:ml-8"
+                } shadow-[ -8px_-8px_15px_rgba(255,255,255,0.1), 10px_10px_15px_black ] ${
+                  item.align === "left" ? "md:order-1" : "md:order-2"
+                }`}
+                style={{ transformStyle: "preserve-3d" }}
               >
                 <div className="flex items-center text-primary mb-2">
                   <FaCalendarAlt className="mr-2" />
