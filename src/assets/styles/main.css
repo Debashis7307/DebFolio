@@ -308,3 +308,16 @@ textarea:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 2px rgba(0, 238, 255, 0.2);
 }
+
+/* Hide scrollbars for elements that should still be scrollable */
+.scrollbar-hide {
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE and old Edge */
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  /* Chrome, Safari, Opera */
+  display: none;
+}
