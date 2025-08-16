@@ -1,139 +1,139 @@
 import { motion } from "framer-motion";
-import project1 from "../assets/images/project1.png";
-import project2 from "../assets/images/project2.png";
-import project3 from "../assets/images/project3.png";
-import project4 from "../assets/images/project4.png";
-import project5 from "../assets/images/project5.png";
-import project6 from "../assets/images/project6.png";
-import project7 from "../assets/images/project7.png";
-import project8 from "../assets/images/project8.png";
-import project9 from "../assets/images/project9.png";
-import project10 from "../assets/images/project10.png";
-import project11 from "../assets/images/project11.png";
-import project12 from "../assets/images/project12.png";
+import project1 from "../assets/images/p1.png";
+import project2 from "../assets/images/p2.png";
+import project3 from "../assets/images/p3.png";
+import project4 from "../assets/images/p4.png";
+import project5 from "../assets/images/p5.png";
+import project6 from "../assets/images/p6.jpeg";
+import project7 from "../assets/images/p7.png";
+import project8 from "../assets/images/p8.png";
+import project9 from "../assets/images/p9.png";
+import project10 from "../assets/images/p10.png";
+import project11 from "../assets/images/p11.png";
+import project12 from "../assets/images/p12.png";
 
 const Projects = () => {
   // Project data with your specific information
   const projects = [
     {
       id: 1,
-      title: "Narada Bot",
+      title: "Annapurna",
       description:
-        "Discord bot integrated with Google Calendar, featuring Moto Synk for auto-syncing, Skudule for smart scheduling, and Simplefy for streamlined.",
-      technologies: ["Next JS", "Tailwind CSS", "Composeio"],
+        "AI-powered meal planner with OCR inventory scanning, personalized recipe generation, and real-time nutrition insights.",
+      technologies: ["ReactJS", "Lottie", "MCP","PuchAI"],
       image: project1,
-      link: "https://naradabot.vercel.app/",
-      github: "https://github.com/arnabpal2022/narada-bot",
+      link: "https://annapurna-recipe.vercel.app/",
+      github: "https://github.com/Debashis7307/annapurna",
     },
     {
       id: 2,
-      title: "Portfolio Website",
+      title: "HACKAUT Website",
       description:
-        "A full-stack e-commerce platform with user authentication, product catalog, and payment integration.",
-      technologies: ["React", "Partical JS", "Email JS"],
-      image: project6,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
+        "Responsive website for Hackaut coding club featuring EmailJS integration and modern UI design.",
+      technologies: ["React JS", "Tailwind CSS", "EmailJS"],
+      image: project2,
+      link: "https://github.com/hackaut/hackaut",
+      github: "https://github.com/hackaut/hackaut",
     },
     {
       id: 3,
-      title: "HACKAUT Website",
+      title: "ChecKly",
       description:
-        "A productivity application for managing tasks with drag-and-drop functionality and team collaboration.",
-      technologies: ["React", "Email JS", "Framer Motion"],
-      image: project10,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
+        "Get instant insights about your website's performance, security, and SEO. Make your website ready for success with ChecKly.",
+      technologies: ["ReactJS", "Rest API", "Go","MongoDB"],
+      image: project3,
+      link: "https://checkly.hawkaii.me/",
+      github: "https://github.com/checkly-go",
     },
     {
       id: 4,
-      title: "Flappy Bird Game",
+      title: "Narada Bot",
       description:
-        "A weather application that displays current and forecasted weather data for any location worldwide.",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
-      image: project3,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
+        "Discord bot integrated with Google Calendar for automated scheduling, reminders, and event management.",
+      technologies: ["Python", "Calendar API", "Composio"],
+      image: project4,
+      link: "https://naradabot.vercel.app/",
+      github: "https://github.com/Debashis7307/narada",
     },
     {
       id: 5,
-      title: "Hand Traker",
+      title: "Arrhythmia Detection Model",
       description:
-        "A weather application that displays current and forecasted weather data for any location worldwide.",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
-      image: project4,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
+       "Explainable ML pipeline for ECG beat segmentation and classification, achieving 99% accuracy with interpretable models.",
+      technologies:  ["Python", "ML", "KNN", "ECG Analysis"],
+      image: project5,
+      link: "https://github.com/Debashis7307/Arrhythmia",
+      github: "https://github.com/Debashis7307/Arrhythmia",
     },
     {
       id: 6,
-      title: "AudioWarp",
+      title: "Aarav – AI Assistant",
       description:
-        "A personal portfolio website built with React and Tailwind CSS to showcase my skills and projects.",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      image: project2,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
+        "Emotionally intelligent AI assistant enabling real-time voice interaction, task automation, and personality-driven responses.",
+      technologies: ["Python", "Google Gemini API", "TTS"],
+      image: project6,
+      link: "https://github.com/Debashis7307/Aarav",
+      github: "https://github.com/Debashis7307/Aarav",
     },
     {
       id: 7,
+      title: "DebFolio",
+      description:
+        "Modern developer portfolio showcasing educations, skills, projects and moments, featuring a AI chatbot for engagement.",
+      technologies: ["ReactJS", "Chat Bot", "EmailJS"],
+      image: project7,
+      link: "https://deb-folio.vercel.app/",
+      github: "https://github.com/Debashis7307/DebFolio",
+    },
+    {
+      id: 8,
+      title: "Hand Tracking System",
+      description:
+         "Computer vision module for real-time gesture recognition enabling virtual whiteboard and mouse control.",
+      technologies: ["Python", "OpenCV", "Computer Vision"],
+      image: project8,
+      link: "https://github.com/Debashis7307/PyModules",
+      github: "https://github.com/Debashis7307/PyModules",
+    },
+    {
+      id: 9,
+      title: "AudioWarp",
+      description:
+        "A sleek and responsive music player built with React, offering seamless playback, playlist management, and modern UI design.",
+      technologies: ["React JS", "Tailwind CSS","Music Player"],
+      image: project9,
+      link: "https://audio-warp.vercel.app/",
+      github: "https://github.com/Debashis7307/AudioWarp",
+    },
+    {
+      id: 10,
       title: "Weather Dashboard",
       description:
         "A weather application that displays current and forecasted weather data for any location worldwide.",
       technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
-      image: project7,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
-    },
-    {
-      id: 8,
-      title: "Clock",
-      description:
-        "A weather application that displays current and forecasted weather data for any location worldwide.",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
-      image: project8,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
-    },
-    {
-      id: 9,
-      title: "Calculator",
-      description:
-        "A weather application that displays current and forecasted weather data for any location worldwide.",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
-      image: project5,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
-    },
-    {
-      id: 10,
-      title: "Proposal Accepter",
-      description:
-        "A weather application that displays current and forecasted weather data for any location worldwide.",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
-      image: project9,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
+      image: project10,
+      link: "https://seasonpredictor.vercel.app/",
+      github: "https://github.com/Debashis7307/weather",
     },
     {
       id: 11,
-      title: "Vertual Whiteboard",
+      title: "Flappy Bird Game",
       description:
-        "A weather application that displays current and forecasted weather data for any location worldwide.",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
+        "A Python-based Flappy Bird clone with dynamic background and audio effects, delivering fun and interactive gameplay.",
+      technologies: ["Python", "Pygame", "Audio"],
       image: project11,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
+      link: "https://github.com/Debashis7307/Flappy-Bird-Game",
+      github: "https://github.com/Debashis7307/Flappy-Bird-Game",
     },
     {
       id: 12,
-      title: "Comtability Checker",
+      title: "Proposal Accept – Fun Game",
       description:
-        "A weather application that displays current and forecasted weather data for any location worldwide.",
-      technologies: ["JavaScript", "OpenWeather API", "Chart.js"],
+        "Interactive web game for planning dates with automated personalized WhatsApp invitations.",
+      technologies: ["JS", "HTML", "WhatsApp Automation"],
       image: project12,
-      link: "https://debashis-lemon.vercel.app/",
-      github: "https://github.com/Debashis7307",
+      link: "https://proposal-accept.vercel.app/",
+      github: "https://github.com/Debashis7307/Proposal_accept",
     },
   ];
 
