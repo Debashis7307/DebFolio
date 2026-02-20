@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import photo5 from "../assets/images/photo5.png";
+import DebGif from "../assets/images/DebGif.gif";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,7 +53,7 @@ const Header = () => {
             className="flex items-center"
           >
             <img
-              src={photo5}
+              src={DebGif}
               alt="logo"
               className="w-10 h-10 rounded-full mr-2"
             />
