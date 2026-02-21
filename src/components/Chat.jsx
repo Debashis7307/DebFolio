@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { GoogleGenAI } from "@google/genai";
 import aiImage from "../assets/images/ai.png";
 import boyImage from "../assets/images/boy.png";
 
@@ -50,39 +51,15 @@ const Chat = ({ isOpen, onClose }) => {
         import.meta.env.VITE_GEMINI_API_KEY ? "Present" : "Missing"
       );
 
-      // Try using fetch directly to test the API
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${
-          import.meta.env.VITE_GEMINI_API_KEY
-        }`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  {
-                    text: `You are Aarav, Debashis's AI assistant. Give brief, concise answers. User question: ${inputText}`,
-                  },
-                ],
-              },
-            ],
-          }),
-        }
-      );
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: `You are Aarav, Debashis's AI assistant. Give brief, concise answers. User question: ${inputText}`,
+      });
 
-      const data = await response.json();
-      console.log("API Response:", data);
+      console.log("API Response:", response);
 
-      let responseText =
-        "Sorry, I couldn't process your request. Please try again.";
-
-      if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-        responseText = data.candidates[0].content.parts[0].text;
-      }
+      const responseText = response.text || "Sorry, I couldn't process your request. Please try again.";
 
       const botMessage = {
         id: Date.now() + 1,
