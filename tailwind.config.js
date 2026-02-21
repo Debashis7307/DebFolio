@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"Noto Serif Georgian"', 'serif'],
+        serif: ['"Noto Serif Georgian"', 'serif'],
+      },
       colors: {
         primary: "#0ef",
         secondary: "#081b29",

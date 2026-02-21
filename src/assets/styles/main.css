@@ -1,9 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Aladin&family=Alex+Brush&family=Ballet:opsz@16..72&family=Bonheur+Royale&family=Lovers+Quarrel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Georgian:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pinyon+Script&display=swap");
 @import "tailwindcss";
 /* @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Italianno&family=Macondo&family=Macondo+Swash+Caps&family=Poppins:wght@300;400;500;600;700&display=swap'); */
-@import url("https://fonts.googleapis.com/css2?family=Aladin&family=Alex+Brush&family=Ballet:opsz@16..72&family=Lovers+Quarrel&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Georgian:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Pinyon+Script&display=swap");
-* {
+html, body {
   font-family: "Noto Serif Georgian", serif;
   font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bonheur-royale-regular {
+  font-family: "Bonheur Royale", cursive;
   font-weight: 400;
   font-style: normal;
 }

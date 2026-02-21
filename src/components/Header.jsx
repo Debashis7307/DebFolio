@@ -57,8 +57,8 @@ const Header = () => {
               alt="logo"
               className="w-10 h-10 rounded-full mr-2"
             />
-            <span className="text-2xl font-bold text-white">
-              <span className="text-primary">D</span>ebfolio
+            <span className="text-2xl font-bold text-white bonheur-royale-regular">
+              <span className="text-primary text-4xl">D</span>ebfolio
             </span>
           </motion.div>
 
