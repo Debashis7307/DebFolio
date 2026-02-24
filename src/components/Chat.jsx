@@ -4,6 +4,67 @@ import aiImage from "../assets/images/ai.png";
 import boyImage from "../assets/images/boy.png";
 
 const Chat = ({ isOpen, onClose }) => {
+  const [usePersona, setUsePersona] = useState(true);
+  const [conciseReply, setConciseReply] = useState(true);
+
+  const personaData = {
+    name: "Debashis Bera",
+    education: {
+      tenth: "93%",
+      twelfth: "91%",
+      graduation:
+        "B.Tech CSE, Maulana Abul Kalam Azad University of Technology, CGPA 8.5",
+    },
+    strengths:
+      "Deep knowledge of core CS fundamentals: OS, COA, DBMS, DAA, Automata, Compiler, SE, Computer Networks",
+    techStack: ["C/C++", "Python", "JavaScript"],
+    roles: [
+      "Software Developer",
+      "Gen AI Developer",
+      "AI & ML",
+      "Frontend Developer",
+    ],
+    sports: ["cricket", "football", "table tennis", "chess", "carrom"],
+    favorite: {
+      sport: "cricket",
+      cricketer: "Rohit Sharma",
+      footballer: "Cristiano Ronaldo (CR7)",
+      color: "royal blue",
+      foods: ["chicken biryani", "mutton biryani"],
+      dessert: "ice cream",
+    },
+    hobbies: ["drawing portraits", "tabla", "gym"],
+    travels: "Loves mountains, especially North East",
+    favSong: "Jay Ho Jay Ho Sankara",
+    happiestMoment: "Winning MetaMorph S-1 hackathon with my team",
+    faith:
+      "Devotee of Lord Mahadev; visiting temples for peace and helping the helpless",
+  };
+
+  const buildPersonaPrompt = () => {
+    const p = personaData;
+    return `You are Aarav, an assistant representing ${p.name}. Use the following persona details to answer questions about ${p.name} when relevant. Keep replies short, to-the-point, friendly, and concise unless asked otherwise. Persona details:\n- Education: ${p.education.graduation} (10th: ${p.education.tenth}, 12th: ${p.education.twelfth})\n- Strengths: ${p.strengths}\n- Tech stack: ${p.techStack.join(", ")}\n- Roles: ${p.roles.join(", ")}\n- Sports & hobbies: ${p.sports.join(", ")}; hobbies: ${p.hobbies.join(", ")}\n- Favorites: sport: ${p.favorite?.sport || "cricket"}, cricketer: ${p.favorite?.cricketer || "Rohit Sharma"}, footballer: ${p.favorite?.footballer || "Cristiano Ronaldo"}, color: ${p.favorite?.color || "royal blue"}\n- Favorite foods: ${p.favorite?.foods?.join(", ") || "chicken biryani"}\n- Favorite dessert: ${p.favorite?.dessert || "ice cream"}\n- Travels: ${p.travels}\n- Favorite song: ${p.favSong}\n- Happiest moment: ${p.happiestMoment}\n- Faith & values: ${p.faith}`;
+  };
+
+  const fewShotExamples = [
+    {
+      q: "Who is Debashis?",
+      a: "Debashis Bera is a software and Gen AI developer with a B.Tech in CSE and strong core CS fundamentals.",
+    },
+    {
+      q: "What are his top skills?",
+      a: "Core CS concepts, Python, C/C++, JavaScript, and Gen AI development — concise and practical.",
+    },
+    {
+      q: "What's his favorite sport?",
+      a: "Cricket — favorite player Rohit Sharma.",
+    },
+  ];
+
+  const buildFewShotText = () => {
+    return fewShotExamples.map((ex) => `Q: ${ex.q}\nA: ${ex.a}`).join("\n\n");
+  };
+
   const [messages, setMessages] = useState([
     {
       id: 1,
@@ -48,18 +109,33 @@ const Chat = ({ isOpen, onClose }) => {
     try {
       console.log(
         "API Key:",
-        import.meta.env.VITE_GEMINI_API_KEY ? "Present" : "Missing"
+        import.meta.env.VITE_GEMINI_API_KEY ? "Present" : "Missing",
       );
 
-      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+      const ai = new GoogleGenAI({
+        apiKey: import.meta.env.VITE_GEMINI_API_KEY,
+      });
+
+      const personaPrompt = usePersona
+        ? buildPersonaPrompt()
+        : `You are Aarav, Debashis's AI assistant.`;
+      const fewShot = usePersona ? buildFewShotText() : "";
+      const conciseInstruction = conciseReply
+        ? "Instruction: Respond in 1-2 short sentences, concise and friendly."
+        : "Instruction: Answer fully but stay friendly.";
+
+      const prompt = `${personaPrompt}\n\n${fewShot ? "Few-shot examples:\n" + fewShot + "\n\n" : ""}${conciseInstruction}\n\nUser: ${inputText}\nAssistant:`;
+
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: `You are Aarav, Debashis's AI assistant. Give brief, concise answers. User question: ${inputText}`,
+        contents: prompt,
       });
 
       console.log("API Response:", response);
 
-      const responseText = response.text || "Sorry, I couldn't process your request. Please try again.";
+      const responseText =
+        response?.text ||
+        "Sorry, I couldn't process your request. Please try again.";
 
       const botMessage = {
         id: Date.now() + 1,
@@ -119,6 +195,7 @@ const Chat = ({ isOpen, onClose }) => {
                 Aarav - Deb's AI Assistant
               </h3>
               <p className="text-gray-400 text-sm">Chat with Aarav</p>
+              {/* Persona and concise mode are enabled by default (hidden in UI) */}
             </div>
           </div>
           <button

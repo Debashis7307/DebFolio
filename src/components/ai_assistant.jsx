@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Chat from "./Chat";
+import ThoughtBubble from "./ThoughtBubble";
 
 const AIAssistant = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -8,6 +9,12 @@ const AIAssistant = () => {
   const handleClick = () => {
     setIsChatOpen(true);
   };
+
+  useEffect(() => {
+    const openHandler = () => setIsChatOpen(true);
+    window.addEventListener("openChat", openHandler);
+    return () => window.removeEventListener("openChat", openHandler);
+  }, []);
 
   return (
     <>
@@ -18,6 +25,8 @@ const AIAssistant = () => {
             className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-transparent rounded-full flex items-center justify-center cursor-pointer hover:scale-110 transition-transform duration-200"
             onClick={handleClick}
           >
+            {/* Small head-attached Lottie (always visible) */}
+            <ThoughtBubble size={56} top={-10} right={-10} />
             <DotLottieReact
               src="https://lottie.host/296faccc-830d-4428-bc3b-65f10580347e/wYZWNGX6ZM.lottie"
               loop
