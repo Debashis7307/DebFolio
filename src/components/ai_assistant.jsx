@@ -26,7 +26,7 @@ const AIAssistant = () => {
             onClick={handleClick}
           >
             {/* Small head-attached Lottie (always visible) */}
-            <ThoughtBubble size={56} top={-10} right={-10} />
+            <ThoughtBubble size={56} top={-19} right={-15} />
             <DotLottieReact
               src="https://lottie.host/296faccc-830d-4428-bc3b-65f10580347e/wYZWNGX6ZM.lottie"
               loop

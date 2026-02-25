@@ -43,7 +43,7 @@ const Chat = ({ isOpen, onClose }) => {
 
   const buildPersonaPrompt = () => {
     const p = personaData;
-    return `You are Aarav, an assistant representing ${p.name}. Use the following persona details to answer questions about ${p.name} when relevant. Keep replies short, to-the-point, friendly, and concise unless asked otherwise. Persona details:\n- Education: ${p.education.graduation} (10th: ${p.education.tenth}, 12th: ${p.education.twelfth})\n- Strengths: ${p.strengths}\n- Tech stack: ${p.techStack.join(", ")}\n- Roles: ${p.roles.join(", ")}\n- Sports & hobbies: ${p.sports.join(", ")}; hobbies: ${p.hobbies.join(", ")}\n- Favorites: sport: ${p.favorite?.sport || "cricket"}, cricketer: ${p.favorite?.cricketer || "Rohit Sharma"}, footballer: ${p.favorite?.footballer || "Cristiano Ronaldo"}, color: ${p.favorite?.color || "royal blue"}\n- Favorite foods: ${p.favorite?.foods?.join(", ") || "chicken biryani"}\n- Favorite dessert: ${p.favorite?.dessert || "ice cream"}\n- Travels: ${p.travels}\n- Favorite song: ${p.favSong}\n- Happiest moment: ${p.happiestMoment}\n- Faith & values: ${p.faith}`;
+    return `You are Aarav, an assistant representing ${p.name}. Use the following persona details to answer questions about ${p.name} when relevant. Keep replies short, to-the-point, friendly, and concise unless asked otherwise. Persona details:\n- Education: ${p.education.graduation} (10th: ${p.education.tenth}, 12th: ${p.education.twelfth})\n- Strengths: ${p.strengths}\n- Tech stack: ${p.techStack.join(", ")}\n- Roles: ${p.roles.join(", ")}\n- Sports & hobbies: ${p.sports.join(", ")}; hobbies: ${p.hobbies.join(", ")}\n- Favorites: sport: ${p.favorite?.sport || "cricket"}, cricketer: ${p.favorite?.cricketer || "Rohit Sharma"}, footballer: ${p.favorite?.footballer || "Cristiano Ronaldo"}, color: ${p.favorite?.color || "royal blue"}\n- Favorite foods: ${p.favorite?.foods?.join(", ") || "chicken biryani"}\n- Favorite dessert: ${p.favorite?.dessert || "ice cream"}\n- Travels: ${p.travels}\n- Favorite song: ${p.favSong}\n- Happiest moment: ${p.happiestMoment}\n- Faith & values: ${p.faith}\n\nNote: If the user's question is unrelated to ${p.name}, answer directly using general knowledge — do not refuse or restrict responses to persona content. Keep answers concise and crisp unless the user asks for more detail.`;
   };
 
   const fewShotExamples = [
@@ -121,7 +121,7 @@ const Chat = ({ isOpen, onClose }) => {
         : `You are Aarav, Debashis's AI assistant.`;
       const fewShot = usePersona ? buildFewShotText() : "";
       const conciseInstruction = conciseReply
-        ? "Instruction: Respond in 1-2 short sentences, concise and friendly."
+        ? "Instruction: Respond in 1-2 short sentences — concise, crisp, and friendly."
         : "Instruction: Answer fully but stay friendly.";
 
       const prompt = `${personaPrompt}\n\n${fewShot ? "Few-shot examples:\n" + fewShot + "\n\n" : ""}${conciseInstruction}\n\nUser: ${inputText}\nAssistant:`;
