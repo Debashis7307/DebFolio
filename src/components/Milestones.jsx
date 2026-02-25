@@ -15,18 +15,25 @@ import ms9 from "../assets/images/ms9.jpg";
 import ms10_3 from "../assets/images/ms10.3.jpg";
 import ms10 from "../assets/images/ms10.jpg";
 import ms11 from "../assets/images/ms11.jpg";
-import ms12_4 from "../assets/images/ms12.4.jpg";
 import ms12 from "../assets/images/ms12.jpg";
 import ms13 from "../assets/images/ms13.jpg";
-import ms14 from "../assets/images/ms14.jpg";
 import ms15_5 from "../assets/images/ms15.5.jpg";
 import ms15 from "../assets/images/ms15.jpg";
-import ms16 from "../assets/images/ms16.jpg";
-import ms17_6 from "../assets/images/ms17.6.jpg";
 import ms17 from "../assets/images/ms17.jpg";
 import ms18 from "../assets/images/ms18.jpg";
 import ms19 from "../assets/images/ms19.jpg";
 import ms20 from "../assets/images/ms20.jpg";
+import ms30 from "../assets/images/ms30.JPG";
+import ms31 from "../assets/images/ms31.png";
+import ms32 from "../assets/images/ms32.JPG";
+import ms33 from "../assets/images/ms33.JPG";
+import ms34 from "../assets/images/ms34.JPG";
+import ms35 from "../assets/images/ms35.JPG";
+import ms36 from "../assets/images/ms36.JPG";
+import ms37 from "../assets/images/ms37.JPG";
+import ms38 from "../assets/images/ms38.JPG";
+import ms39 from "../assets/images/ms39.JPG";
+import ms40 from "../assets/images/ms40.JPG";
 
 const images = [
   {
@@ -34,6 +41,7 @@ const images = [
     description:
       "Team HACKAUT of MAKAUT and their guiding faculty minds — united by code and vision.",
   },
+  { src: ms31, description: "Hackathon Exposure" },
   {
     src: ms1,
     description:
@@ -43,6 +51,7 @@ const images = [
     src: ms2,
     description: "GDSC MAKAUT AI & ML core team members of the 2023 session.",
   },
+  { src: ms30, description: "Hackathon Exposure. #Metamorph_S1 #Winning_Team" },
   { src: ms3, description: "Team HACKAUT - ALPHA at Hack4Bengal Season 3." },
   {
     src: ms4,
@@ -54,6 +63,7 @@ const images = [
     description:
       "GDSC MAKAUT 2023 core members captured after wrapping up a successful workshop session.",
   },
+  { src: ms32, description: "Hackathon Exposure. #Metamorph_S1 #Winning_Team" },
   {
     src: ms5_1,
     description:
@@ -64,11 +74,13 @@ const images = [
     description:
       "10 hours. Endless ideas. Pure passion. First-year students wrapped up their first hackathon with Team HACKAUT!",
   },
+  { src: ms39, description: "Hackathon Exposure. #HexaFalls" },
   {
     src: ms6,
     description:
       "Teaching the power of tech clubs and collaboration — planting the seeds of innovation at the induction program.",
   },
+  { src: ms33, description: "Hackathon Exposure. #Metamorph_S1 #Winning_Team" },
   {
     src: ms7,
     description: "On the main stage, feeling the Fest 2K24 energy! #LivingItUp",
@@ -78,6 +90,7 @@ const images = [
     description:
       "One last frame together — farewell to our amazing HACKAUT seniors as they step into new adventures.",
   },
+  { src: ms34, description: "Hackathon Exposure. #Metamorph_S1 #Winning_Team #Judges" },
   { src: ms9, description: "Freshers party vibes with the best crew in town!" },
   {
     src: ms10_3,
@@ -89,27 +102,24 @@ const images = [
     description:
       "Proud moment with Team HACKAUT-ALPHA — winners of the Best Use of Compose.io at Hack4Bengal S3!",
   },
+  { src: ms35, description: "Hackathon Exposure. #Metamorph_S1 #Winning_Team #Judges" },
   {
     src: ms11,
     description:
       "Capturing memories with our amazing seniors from Repl Devs 2K22 — legends of their time!",
   },
   {
-    src: ms12_4,
-    description:
-      "And it begins! Our hackathon officially flagged off by sir on behalf of Team HACKAUT.",
-  },
-  {
     src: ms12,
     description:
       "One last click after the swag drop — Team GDSC 2K23 wrapping up an amazing chapter!",
   },
+  { src: ms36, description: "Hackathon Exposure. #Metamorph_S1 #Winning_Team" },
   {
     src: ms13,
     description:
       "Captured in action during the AI & ML workshop — teaching the basics of AI, NumPy, and Pandas. #GDSC2K23",
   },
-  { src: ms14 },
+  { src: ms37, description: "Hackathon Exposure. #Status_Code_2" },
   {
     src: ms15_5,
     description:
@@ -120,16 +130,7 @@ const images = [
     description:
       "Mission accomplished! CodeXcellence 2K23 wrapped up with success and smiles. #HACKAUT",
   },
-  {
-    src: ms16,
-    description:
-      "Brains at work! Participants giving their best during the CodeXcellence coding competition. #HACKAUT",
-  },
-  {
-    src: ms17_6,
-    description:
-      "The auditorium buzzing with energy during the hackathon at the college tech fest. #Hackaut #ClgTechFest.",
-  },
+  { src: ms38, description: "Hackathon Exposure. #HexaFalls" },
   {
     src: ms17,
     description:
@@ -144,6 +145,7 @@ const images = [
     src: ms19,
     description: "Focused on the goal. I will not stop until it’s done.",
   },
+  { src: ms40, description: "Hackathon Exposure. #Status_Code_2" },
   {
     src: ms20,
     description:
